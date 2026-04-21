@@ -4,6 +4,20 @@ import ResultModal from './components/ResultModal';
 import optionsData from './data/options.json';
 import './App.css';
 
+const Logo = () => (
+  <div className="nest-logo-container">
+    <div className="logo-top-text">WHERE TALENT MEETS OPPORTUNITY</div>
+    <div className="logo-main">
+      <div className="logo-line"></div>
+      <div className="logo-nest">NEST</div>
+      <div className="logo-summit">Summit</div>
+      <div className="logo-line"></div>
+    </div>
+    <div className="logo-star star-1">✦</div>
+    <div className="logo-star star-2">✦</div>
+  </div>
+);
+
 function App() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [spinResult, setSpinResult] = useState(null);
@@ -29,6 +43,8 @@ function App() {
 
   return (
     <div className="app-container">
+      <Logo />
+      
       <main className="main-content">
         <div className="wheel-section" onClick={!isSpinning ? handleSpin : undefined}>
           <Wheel 

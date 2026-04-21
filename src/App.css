@@ -9,8 +9,76 @@
   margin: 0;
   position: relative;
   overflow: hidden;
-  /* Removal of forced white background to allow index.css gradient to show */
   background-color: transparent;
+}
+
+/* Logo Positioning and Styling */
+.nest-logo-container {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  color: #ffffff;
+}
+
+.logo-top-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+.logo-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo-nest {
+  font-family: 'Roboto Slab', serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 0.8;
+  margin-bottom: -2px;
+}
+
+.logo-summit {
+  font-family: 'Outfit', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 0.8;
+  text-transform: none;
+}
+
+.logo-line {
+  width: 120px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 5px 0;
+}
+
+.logo-star {
+  position: absolute;
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.star-1 {
+  top: 15px;
+  right: -20px;
+}
+
+.star-2 {
+  bottom: 0px;
+  left: -20px;
 }
 
 .main-content {
@@ -31,4 +99,13 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 600px) {
+  .nest-logo-container {
+    top: 20px;
+    right: 20px;
+    transform: scale(0.7);
+    transform-origin: top right;
+  }
 }
