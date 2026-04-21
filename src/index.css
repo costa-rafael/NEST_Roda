@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Roboto+Slab:wght@700;800;900&display=swap');
+
+:root {
+  --bg-color: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  
+  --wheel-border: #132b1b;
+  --wheel-center: #132b1b;
+  
+  --slice-green-1: #7bd488; /* Lighter pistachio green */
+  --slice-green-2: #489b65; /* Darker green */
+  --slice-text: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 40px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
