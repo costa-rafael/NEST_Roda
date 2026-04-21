@@ -11,9 +11,8 @@ const Wheel = ({ options, onStop, isSpinning, spinResult }) => {
       const sliceAngle = 360 / numOptions;
       const targetIndex = options.findIndex((opt) => opt.id === spinResult.id);
       
-      const extraSpins = 3;
-      // + 90 because indicator is on the right now
-      const targetRotation = 360 * extraSpins - (targetIndex * sliceAngle) + 90 + (Math.random() * (sliceAngle * 0.4) - (sliceAngle * 0.2));
+      const extraSpins = 4;
+      const targetRotation = 360 * extraSpins - (targetIndex * sliceAngle) + 90 + (Math.random() * (sliceAngle * 0.3) - (sliceAngle * 0.15));
       
       setRotation(prev => prev + targetRotation + (360 - (prev % 360)));
     }
@@ -47,21 +46,19 @@ const Wheel = ({ options, onStop, isSpinning, spinResult }) => {
 
   return (
     <div className="wheel-container">
-      {/* Right indicator pin */}
       <div className="wheel-pin-right">
-        <svg width="40" height="40" viewBox="0 0 40 40">
-          <polygon points="5,20 40,5 40,35" fill="var(--wheel-border)" />
+        <svg width="50" height="50" viewBox="0 0 40 40">
+          <polygon points="5,20 40,5 40,35" fill="#ffffff" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.3))" />
         </svg>
       </div>
 
       <motion.div 
         className="wheel"
         animate={{ rotate: rotation }}
-        transition={{ duration: 4.5, ease: "easeOut" }}
+        transition={{ duration: 5, ease: "easeOut" }}
         onAnimationComplete={() => { if(isSpinning) onStop() }}
       >
         <svg width="100%" height="100%" viewBox="0 0 400 400">
-          {/* Wheel background border */}
           <circle cx="200" cy="200" r="192.5" fill="none" stroke="var(--wheel-border)" strokeWidth="15" />
           
           {options.map((opt, i) => {
@@ -82,14 +79,14 @@ const Wheel = ({ options, onStop, isSpinning, spinResult }) => {
                   d={describeArc(center, center, radius - 15, startAngle, endAngle)} 
                   fill={fillColor} 
                   stroke="var(--wheel-border)" 
-                  strokeWidth="4"
+                  strokeWidth="3"
                 />
                 
-                <circle cx={dotX} cy={dotY} r="3.5" fill="var(--slice-green-1)" />
+                <circle cx={dotX} cy={dotY} r="3" fill="#ffffff" opacity="0.4" />
 
                 <g transform={`translate(${center}, ${center}) rotate(${i * sliceAngle - 90})`}>
                   <text 
-                    x="115"
+                    x="110"
                     y="0" 
                     fill="var(--slice-text)"
                     className="slice-text"
@@ -97,10 +94,10 @@ const Wheel = ({ options, onStop, isSpinning, spinResult }) => {
                     dominantBaseline="middle"
                   >
                     {lines.map((line, index) => {
-                      const offsetValue = 8;
+                      const offsetValue = 7.5;
                       const yOffset = lines.length === 2 ? (index === 0 ? -offsetValue : offsetValue) : 0;
                       return (
-                        <tspan x="115" y={yOffset} key={index}>{line}</tspan> 
+                        <tspan x="110" y={yOffset} key={index}>{line}</tspan> 
                       )
                     })}
                   </text>

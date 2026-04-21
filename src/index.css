@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Roboto+Slab:wght@700;800;900&display=swap');
 
 :root {
-  --bg-color: #ffffff;
-  --text-primary: #000000;
-  --text-secondary: #000000;
+  --bg-color: #132b1b; /* Dark deep green from the image */
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
   
-  --wheel-border: #132b1b;
-  --wheel-center: #132b1b;
+  --wheel-border: #0a180f; 
+  --wheel-center: #0a180f;
   
-  --slice-green-1: #7bd488; /* Lighter pistachio green */
-  --slice-green-2: #489b65; /* Darker green */
+  --slice-green-1: #57b378; /* Muted pistachio */
+  --slice-green-2: #3a7d52; /* Forest green */
   --slice-text: #ffffff;
+  
+  --accent: #57b378;
 }
 
 * {
@@ -21,7 +23,8 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: var(--bg-color);
+  /* Soft background gradient inspired by the NEST Summit image */
+  background: radial-gradient(circle at center, #1e452d 0%, #132b1b 100%);
   color: var(--text-primary);
   height: 100vh;
   width: 100vw;
@@ -37,19 +40,8 @@ body {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 40px 60px -15px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes popIn {
-  0% { transform: scale(0.9); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  background: rgba(10, 24, 15, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
