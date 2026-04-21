@@ -9,7 +9,8 @@
   margin: 0;
   position: relative;
   overflow: hidden;
-  background-color: #ffffff;
+  /* Removal of forced white background to allow index.css gradient to show */
+  background-color: transparent;
 }
 
 .main-content {
